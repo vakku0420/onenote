@@ -1,0 +1,52 @@
+Q. What is meant by multitasking and multithreading in operating systems?
+Q. Cycle Detection in a Singly Linked List
+
+Determine if a given singly linked list of integers forms a cycle or not.
+A cycle in a linked list occurs when a node's next points back to a previous node in the list. Thus, the list does not have a linear structure with a beginning and an end, but instead cycles through a loop of nodes.
+Input:
+The first line of each test case contains the elements of the singly linked list, separated by a single space and terminated by -1, where -1 indicates the end of the list and would never be a list element. 
+The second line contains an integer position "pos" which denotes the position (0-indexed) in the linked list where the tail connects to a cycle, or -1 if there is no cycle.
+Output:
+The only line of output should be 'true' if the linked list contains a cycle, or 'false' if it does not. 
+The function should not explicitly print the output, as it is handled automatically.
+Example:
+Input:
+3 2 0 -4 -1
+1
+Output:
+true
+Explanation:
+The linked list is: 3 -> 2 -> 0 -> -4, and position 1 indicates the tail connects to the second node, forming a cycle.
+Constraints:
+	• 0 ≤ N ≤ 106
+	• -1 ≤ pos < N
+	• -109 ≤ data ≤ 109 and data ≠ -1
+Note:
+Aim to solve this problem with O(N) time complexity and O(1) space complexity
+
+Q. Longest Happy String Problem Statement
+
+Given three non-negative integers X, Y, and Z, determine the longest happy string. A happy string is defined as a string that contains only the letters 'a', 'b', and 'c' without having any three consecutive letters being the same.
+Explanation:
+You need to construct the longest string possible such that it has 'a' at most X times, 'b' at most Y times, and 'c' at most Z times.
+If there are multiple strings with maximum length, any of these strings can be returned.
+Input:
+The first line contains an integer 'T' representing the number of test cases. Each test case consists of one line containing three space-separated integers: X, Y, and Z.
+Output:
+For each test case, return "1" if a correct happy string can be formed, otherwise return "0".
+Example:
+Input:
+2
+1 1 7
+2 2 1
+Output:
+1
+1
+Constraints:
+	• 1 ≤ T ≤ 5
+	• 0 ≤ X, Y, Z ≤ 10^3
+	• X + Y + Z ≥ 1
+Note:
+You are not required to input or print anything. Focus on implementing the function to achieve the desired result.
+
+
