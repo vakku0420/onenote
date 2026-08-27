@@ -1,0 +1,40 @@
+	• Serialization Deserialization
+	• Design Pattern
+	• Write singelton design pattern
+		public static Singelton{
+		  int ins = 10;
+		  if (ins == null){
+		      ins = new Singelton();
+		  }
+		}
+	
+	• Immutable String - 
+		String str = "Aman";
+		str =  "Vartika";
+		String str1 = "abc";
+		str = str1
+	• Ternary Operator
+	• Types of thread
+
+
+🔹 Ternary Operator in Java (?:)
+The ternary operator is a short-hand replacement for an if–else statement.
+It evaluates a condition and returns one of two values based on whether the condition is true or false.
+
+condition ? expression_if_true : expression_if_false;
+
+int a = 10, b = 20;
+int min = (a < b) ? a : b;
+System.out.println(min); // Output: 10
+
+Q: Can ternary operator replace if-else completely?
+A: ❌ No. It is suitable only for simple conditional assignments, not for complex logic or multiple statements.
+
+📊 Comparison: if-else vs Ternary
+Feature	if-else	Ternary
+Lines of code	More	Less
+Readability	Better for complex logic	Best for simple logic
+Returns value	No	Yes
+
+
+
