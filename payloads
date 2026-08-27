@@ -1,0 +1,423 @@
+CreateOrderExternal Payload with Promotion TradeIn.
+
+{
+  "category": "Consumer",
+  "subCategory": "MobilePostpaid",
+  "externalOrderId": "DCDOrder7865",
+  "customerId": "3000031691",
+  "billingAccountId": "1000019392",
+  "lineInfo": [
+    {
+      "lineOrderItem": [
+        {
+          "externalLineOrderItemId": "DCDOrderItemId1",
+          "action": "add",
+          "actionReason": [
+            {
+              "action": "add",
+              "reason": "Customer Request"
+            }
+          ],
+          "productOfferRef": {
+            "id": "e67a5c0e-c611-42aa-8962-88a38d025692",
+            "productOfferingType": "Mobile_Device",
+            "productOfferingTypeGroup": "mobileDevice"
+          },
+          "characteristic": [
+            {
+              "name": "Purchase_Option",
+              "value": "E"
+            }
+          ],
+          "productRelationship": [
+            {
+              "id": "205942",
+              "relationshipType": "subscriptionMainProduct",
+              "productOfferId": "1efab645-8c4c-4100-91ea-84047690c09e"
+            }
+          ],
+          "equipmentInstallmentPlan": {
+            "agreementNumber": 861234,
+            "immediatePayment": {
+              "unit": "USD",
+              "value": 99.99
+            },
+            "numberOfInstallments": 24,
+            "recurringInstallmentAmount": {
+              "unit": "USD",
+              "value": 8.33
+            },
+            "lastInstallmentAmount": {
+              "unit": "USD",
+              "value": 8.33
+            },
+            "quoteDate": "2024-10-21T07:34:19.318Z",
+            "downPaymentAmount": {
+              "unit": "USD",
+              "value": 99.99
+            },
+            "additonalRequiredDownPayment": {
+              "unit": "USD",
+              "value": 0
+            },
+            "additionalDownPaymentAmount": {
+              "unit": "USD",
+              "value": 0
+            },
+            "temporaryPhoneNumber": "97297762000",
+            "firstMonthPaymentDueDate": "2024-10-21T07:34:19.318Z",
+            "finalMonthPaymentDueDate": "2026-09-21T07:34:19.318Z",
+            "amountFinanced": {
+              "unit": "USD",
+              "value": 299.99
+            },
+            "remainingFinancedAmount": {
+              "unit": "USD",
+              "value": 299.99
+            },
+            "downPaymentAdjustedAmount": {
+              "unit": "USD",
+              "value": 0
+            },
+            "totalDownPaymentAmount": {
+              "unit": "USD",
+              "value": 99.99
+            },
+            "balance": {
+              "unit": "USD",
+              "value": 200
+            },
+            "financingProgramDocumentId": "2306012121292261234",
+            "signatureStatus": "signed",
+            "totalFinancedTaxAmount": {
+              "unit": "USD",
+              "value": 0
+            }
+          },
+          "itemPrice": [
+            {
+              "priceCategory": "Device",
+              "taxCollection": {
+                "totalTax": {
+                  "unit": "USD",
+                  "value": "125"
+                },
+                "taxes": [
+                  {
+                    "amount": {
+                      "unit": "USD",
+                      "value": "100"
+                    },
+                    "code": "CNCTN",
+                    "typeCode": "SALES"
+                  },
+                  {
+                    "amount": {
+                      "unit": "USD",
+                      "value": "25"
+                    },
+                    "code": "CTN",
+                    "typeCode": "VAT"
+                  }
+                ]
+              },
+              "relatedPromotion": [
+                {
+                  "promoCode": "06251",
+                  "action": "add",
+                  "benefitAmount": {
+                    "unit": "USD",
+                    "value": "100"
+                  },
+                  "recurringPromotionInfo": [
+                    {
+                      "benefitAmount": {
+                        "unit": "USD",
+                        "value": "4.16"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "priceCategory": "DCC",
+              "taxCollection": {
+                "totalTax": {
+                  "unit": "USD",
+                  "value": "6"
+                },
+                "taxes": [
+                  {
+                    "amount": {
+                      "unit": "USD",
+                      "value": "3.5"
+                    },
+                    "code": "CNCTN",
+                    "typeCode": "SALES"
+                  },
+                  {
+                    "amount": {
+                      "unit": "USD",
+                      "value": "2.5"
+                    },
+                    "code": "CTN",
+                    "typeCode": "VAT"
+                  }
+                ]
+              }
+            }
+          ],
+          "itemRelationship": [
+            {
+              "id": "delivery_123",
+              "relationshipType": "deliveredBy"
+            }
+          ],
+          "transactionType": "CHANGEDEVICE"
+        },
+        {
+          "externalLineOrderItemId": "DCDOrderItemId2",
+          "action": "add",
+          "actionReason": [
+            {
+              "action": "add",
+              "reason": "Customer Request"
+            }
+          ],
+          "productOfferRef": {
+            "id": "76dbd65b-08f7-4304-befd-29ce0854928d",
+            "productOfferingType": "Trade_In",
+            "productOfferingTypeGroup": "mobileDevice"
+          },
+          "characteristic": [
+            {
+              "name": "SupressFMV",
+              "value": "true"
+            },
+            {
+              "name": "Brand",
+              "value": "Apple"
+            },
+            {
+              "name": "model",
+              "value": "iPhoneXS"
+            },
+            {
+              "name": "Carrier",
+              "value": "T-Mobile"
+            },
+            {
+              "name": "Memory",
+              "value": "512"
+            },
+            {
+              "name": "Color",
+              "value": "Grey"
+            },
+            {
+              "name": "Quotation_Amount",
+              "value": "999.00"
+            },
+            {
+              "name": "Quotation_Id",
+              "value": "12345"
+            },
+            {
+              "name": "Quotation_Expiration_Date",
+              "value": "2024-10-24T17:30:24.161Z"
+            },
+            {
+              "name": "IMEI",
+              "value": "123456789"
+            },
+            {
+              "name": "Evaluated_Condition",
+              "value": "GOOD"
+            },
+            {
+              "name": "Market_Name",
+              "value": "iPhoneXS"
+            },
+            {
+              "name": "Transaction_Type",
+              "value": "A"
+            },
+            {
+              "name": "Loan_Id",
+              "value": "12345"
+            },
+            {
+              "name": "Loan_PayOff_Amount",
+              "value": "99.00"
+            },
+            {
+              "name": "Device_Level_Balance",
+              "value": "60.00"
+            },
+            {
+              "name": "Program_Type",
+              "value": "JM1"
+            },
+            {
+              "name": "Universal_Line_Id",
+              "value": "123"
+            },
+            {
+              "name": "Product_Type",
+              "value": "String"
+            },
+            {
+              "name": "Trade_In_Return_Method",
+              "value": "Instore"
+            },
+            {
+              "name": "Product_SubType",
+              "value": "String"
+            },
+            {
+              "name": "TradeIn_Intent",
+              "value": "String"
+            },
+            {
+              "name": "Exclude_Fair_Market_Value",
+              "value": "String"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fulfillmentItem": [
+    {
+      "externalLineOrderItemId": "delivery_123",
+      "action": "add",
+      "actionReason": [
+        {
+          "action": "add",
+          "reason": "Customer Request"
+        }
+      ],
+      "productOfferRef": {
+        "id": "1395206c-aeae-40d8-944a-5ac2e5495b7e",
+        "productOfferingType": "Delivery_Method",
+        "productOfferingTypeGroup": "deliveryMethod"
+      },
+      "characteristic": [
+        {
+          "name": "Estimated_Shipping_Date_To",
+          "value": "2025-01-28T05:49:52.928Z"
+        },
+        {
+          "name": "Estimated_Shipping_Date_From",
+          "value": "2025-01-26T05:49:52.928Z"
+        }
+      ],
+      "relatedAddress": [
+        {
+          "referenceId": "address_789",
+          "relationshipType": "deliveredBy"
+        }
+      ]
+    }
+  ],
+  "addressInfo": [
+    {
+      "addressRefId": "address_123",
+      "address": {
+        "addressLine1": "236 S LUCERNE CIR",
+        "addressLine2": "123 XYZ STREET",
+        "city": "ORLANDO",
+        "zip": "32801",
+        "zip4Ext": "4400",
+        "state": "FL",
+        "country": "USA"
+      }
+    },
+    {
+      "addressRefId": "address_789",
+      "address": {
+        "geographicAddressId": "GeographicAddress_68377710513667942"
+      }
+    }
+  ],
+  "taxCollection": {
+    "totalTax": {
+      "unit": "USD",
+      "value": 110
+    },
+    "taxes": [
+      {
+        "amount": {
+          "unit": "USD",
+          "value": 110
+        },
+        "typeCode": "SALES"
+      },
+      {
+        "amount": {
+          "unit": "USD",
+          "value": "25"
+        },
+        "typeCode": "VAT"
+      }
+    ]
+  },
+  "aggregateEquipmentInstallmentPlanInfo": {
+    "balance": {
+      "unit": "USD",
+      "value": 200
+    },
+    "originSystem": "EIP",
+    "totalFinancedTaxAmount": {
+      "unit": "USD",
+      "value": 0
+    },
+    "totalAmountFinanced": {
+      "unit": "USD",
+      "value": 299.99
+    },
+    "totalDownPaymentAmount": {
+      "unit": "USD",
+      "value": 99.99
+    },
+    "additionalRequiredDownPayment": {
+      "unit": "USD",
+      "value": 0
+    },
+    "additionalDownPaymentAmount": {
+      "unit": "USD",
+      "value": 0
+    },
+    "downPaymentAmount": {
+      "unit": "USD",
+      "value": 99.99
+    }
+  }
+}
+
+
+
+
+Subscriber Main offer - dealor code
+
+
+1000164500
+RS-32352 |  QAT1 | SE | Change_FirstName_LastName
+
+After LD:D1 Business - PO is completed | CL Table passed | ACBR generated
+Cust-3000214161
+BA-1000164740
+BAN-990649823
+ProductOrder_433908829825294336
+
+Before LD:
+cust-3000213866
+BA-1000164725
+BAN-990649808
+ProductOrder_433868928745836544
+
+compareUtility
+
+
+
