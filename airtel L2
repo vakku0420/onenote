@@ -1,0 +1,69 @@
+	• You are working on a microservice architecture, okay? Now, the lifespan of an order is not simply, let’s say, one second or ten seconds. Okay? It can span up to, let’s say—let’s take the example of Amazon. You added, let's say, one iPhone, one Samsung phone, and there are three phones in total. Now, you are adding all three. From there, what will happen is that when you check out, it will go to another service, and you will say that "Okay, this order is created," and then eventually, let’s say, it will go to the billing service, it will go to the payment service, it will ask for the payment from the customer, right? Then eventually, it will ask for the delivery, for the shipping service, right? And eventually, let's say, it will go to the CRM to update the user profile in the CRM. Now, in this step, let's say the entire process may take around two hours or maybe six hours. So, how do you deal with this type of architecture?
+	
+	• I mean to ask that, see, if you are simply interacting via, let’s say, from one microservice to another microservice, it is not simply—let's say that one microservice will take around five minutes to get the acknowledgment from the shipping service, because the shipping service is not mine. It is some external party like Blue Dart or some other service which I’m using. So, they will give me acknowledgment after, let's say, five minutes. So, what I will do to the customer? I will not keep them waiting, right? So, what is the architecture pattern which we will follow in this case? Or I expect that it must be being followed in your application also.
+Speaker 2: Yeah, that’s followed. That's what I have said, that for all the details, we have one more microservice, that is like PI—I mean, a "sync" we can say. In general terms, that is a Sync Microservice, okay? So, what it does is it syncs everything. What I mean is, like, if I am a customer of Amazon, it doesn't matter if I ordered today only; I have ordered previously also, and I will be ordering afterwards as well. So, somehow we have to track—have all the records, track all the records, like previous as well as current.
+So, what happens is, there is a PI—like one ID. After there is an MS [Microservice] that syncs all the things. So in that ID, in that JSON, everything gets synced, which is the previous also. If we retrieve something—do a 'GET' from that ID—we will retrieve a response. In that response, we get all the things, like previous as well.
+Speaker 1: Okay, but that is a flaw in the system. Because let’s say I ordered two items, and there were two items before also. Now you are saying that unless this PI microservice runs, you will only show me two items; you will not show me four items, right, unless the PI runs? This is a problem. For example, I bought two phones earlier, and five minutes later, I bought three phones. So you will only show me that you bought two phones.
+Speaker 2: No, no. That will sync and that will show the five phones. That’s what I was trying to say.
+Speaker 1: It will take time, no? It is another microservice. It is happening via maybe Couchbase or via DB, right?
+Speaker 2: Before completion of the order—I mean, in the order handling part only—before completion, it syncs to the PI, I mean, the Sync MS.
+Speaker 1: Okay. In this part, what is Event-Driven Architecture?
+Speaker 2: Sorry?
+Speaker 1: What is Event-Driven Architecture?
+Speaker 2: Event-driven... sorry.
+Speaker 1: Okay. So, I hope you are aware about the downstream system microservices, and here we are talking about Event-Driven Architecture where, let's say, every microservice is waiting for events from another microservice. Now, I want to understand: why you used Couchbase, basically, in your application?
+Speaker 2: To store the—like, from order handling to order capturing. As I told you, we don't store each and every thing to our Samsung database, the CRM database. So, to store the response—it looks like maybe the order gets completed, order gets failed, or order gets cancelled. So, to store documentation of each and every order from creation to completion, we store each and every detail to the Couchbase. So there we can see... [audio ends].
+Summary of Key Topics
+ * Long-running transactions: Discussion on how to handle processes (like shipping) that take minutes or hours to acknowledge.
+ * Sync Microservice: The candidate explains a service that aggregates order history into a single JSON response.
+ * Event-Driven Architecture: The interviewer introduces the concept of services reacting to events from other services.
+ * Couchbase Usage: Used for storing intermediate order states and documentation from creation to completion to avoid overloading the main CRM database.
+Based on the audio file provided, here is the transcript of the continued technical discussion regarding Couchbase, indexing, and the internal handling of order data:
+Audio Transcript
+Speaker 1 (Male): ...to store it. Okay. So, basically, what I want to understand is: why Couchbase? Why not MongoDB? Or why not, let’s say, some other NoSQL database?
+Speaker 2 (Female): Basically, we were using—I mean, for storing technical things—like, we store the documents in the Couchbase. And basically, Couchbase is, like, faster than Mongo. And as I told you, we store the documents, so Couchbase is the document-based database. So that’s why we were using Couchbase.
+Speaker 1: Okay. So, basically, it’s about the Couchbase architecture also, because it provides more performance because of the internal caching.
+Speaker 2: Yeah.
+Speaker 1: Okay. So, when you are talking about Couchbase, how many types of indexing are there in Couchbase?
+Speaker 2: Couchbase... I don't exactly remember the names, but yeah, there are indexing... I mean, we have performed the indexing also.
+Speaker 1: Okay. So, what is a GSI?
+Speaker 2: Sorry?
+Speaker 1: Global Secondary Index.
+Speaker 2: Yeah, I have heard that, but exactly I am not getting the point—I mean, what it is.
+Speaker 1: Okay. So, let’s say that you have been given a Couchbase bucket and you have to create a primary index. So, can you give me the query for that?
+Speaker 2: No, actually, I don't remember the query part. Basically, we use Couchbase mostly for checking the logs—I mean, not the logs, but the documentation of the order. Like, what is the current state? So, mostly we don't use queries; we just use the ID of the order and we just get the details. We just fetch the details from that ID.
+Speaker 1: Okay. So, what if—let's say that you have to find out all the orders which were created on, let’s say, today? How do you do that?
+Speaker 2: There is a "Filter" part in the Couchbase. From there, we can—I mean, we have the attributes, okay? So we put the attributes and the value of that, and we get the result.
+Speaker 1: Okay. But eventually, if there are billions of records, then without indexing, your query will not work. It will give you a "Timeout."
+Speaker 2: Yeah, definitely. So, in that case, the indexing part will come into the picture. But honestly, I have not—I mean, I don't remember the query for that.
+Speaker 1: Okay. So, do you know about N1QL?
+Speaker 2: No.
+Speaker 1: Okay. No problem. So, when you say that you are using Couchbase, which—I mean, are you using any specific library to connect to Couchbase? Like, let's say, Spring Data Couchbase, or the Couchbase SDK?
+Speaker 2: We were using the Couchbase SDK.
+Speaker 1: Okay, Couchbase SDK. Okay. So, basically, what I want to understand is: what is the flow of your application? Let’s say, when the user clicks on "Order," okay? From there, how does the request reach your microservice, and what are the steps you follow internally?
+Speaker 2: Okay. So, as I told you, first of all, it hits the Order Capture [Service], okay? Then there is another microservice, that is Order Handling. So, in between there is one more thing, like we have to check the credit—I mean, credit check. Like, if the customer is able to—I mean, he's allowed to take that order or not. So there is one more thing, that is Credit Check.
+So after the Credit Check, it goes to the Order Handling part. And from there, the actual process—like checking the technical things, like if the technical things are there or not. Like, if you are buying a Samsung phone, then if that phone is available in the stock or not. So all those things happen in the Order Handling part.
+And after that, it goes to the—I mean, to sync that. I mean, to create that order in the Samsung database. After all the things—technical things and all the things—it goes to create that order in the database. And then the response comes to the Order Capture, and from there to the UI—that "Your order has been placed."
+Speaker 1: Okay. So, in between, where is Couchbase used?
+Speaker 2: In between, like from—as I told you—from the Capture to the Handling part, each and every detail—I mean, each and every step—the response or the request gets stored in the Couchbase.
+Key Technical Points in this Audio:
+ * Database Comparison: The candidate explains the choice of Couchbase over MongoDB based on its document-oriented nature and performance/speed.
+ * Couchbase Indexing: The interviewer questions the candidate on indexing (GSI, Primary Index) and N1QL (Couchbase's query language), which the candidate is less familiar with, noting they primarily use document IDs for retrieval.
+ * Application Workflow:
+   * Order Capture: Initial request.
+   * Credit Check: Validates if the customer is eligible for the purchase.
+   * Order Handling: Validates technical details and inventory (stock availability).
+   * Couchbase Integration: Used as a persistent store for requests/responses at every step of the process to track the state of the order.
+   * Database Finalization: Order is created in the main database (referred to as the "Samsung database") before a confirmation is sent back to the UI.
+
+
+
+
+
+
+
+
+
+
+
+DevPack is a unified framework inside Cursor IDE that brings together personas, rules, tools, and reference knowledge so that agents behave consistently across teams. It includes MCP integrations, which let agents interact with real systems like Jira or Jenkins. DevPack does not replace engineering standards such as testing practices, and it does not eliminate the need for human review. Teams should still apply their guidelines and validate outputs.
