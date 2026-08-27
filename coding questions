@@ -1,0 +1,7 @@
+	1. We have list of numbers. Map numbers to map when number is odd key is 0 and when number is 1 key is 1.
+	2. List<Organization> - List <Employee> add DOJ by 30.
+	3. using java 8 sort the list of employees by salary in desc order and if employees having same salary then sort them by name
+	4. Input arr = [0,1,2,3,4,5]
+	Output arr = [0,1],[2,3],[4,5]] as size input.
+	5. 
+	
