@@ -1,0 +1,24 @@
+	• Definer Stream API in java.
+	• Input arr = [0,1,2,3,4,5]
+	Output arr = [0,1],[2,3],[4,5]] as size input.
+	public  static void mai
+	 List<Integer> list = List.of(0,1,2,3,4,5);
+	 int size; // 2, 5, ...  size-1
+	 IntStream.iterate(0, i -> i < list.size(), i-> i + size)
+	         .mapToObj(startIndex ->list.subList(startIndex, Math.min(startIndex+size, list.size())).collect(Collectors.toList()); 
+	
+	StartIndex ->list.subList(startIndex, Math.min(startIndex+size, list.size() - which interface it is?
+	• Consumer in java
+	• Primary Annotation
+	• Map in stream API
+	• Why there is No Bisupplier?
+	• Functional Interface.
+	
+
+PE 8+20+4+9 +4=45 
+CE 15+4+4+20=43 
+
+
+
+ 
+
